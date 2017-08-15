@@ -1,14 +1,11 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options -MultiViews
-        RewriteEngine On
-        RewriteRule ^(.*)$ public/$1 [L]
+        Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
     DirectoryIndex index.php
-
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteBase /~user11/task1
     # Redirect Trailing Slashes...
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 

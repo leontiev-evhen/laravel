@@ -13,7 +13,9 @@
 
 
 
-Route::get('/', 'MainController@showIndex');
+Route::get('/', function(){
+    return Redirect::to('home');    
+});
 Route::get('home', 'MainController@showHome');
 Route::get('about', 'MainController@showAbout');
 Route::get('articles', 'MainController@showArticles');

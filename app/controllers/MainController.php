@@ -2,11 +2,6 @@
 
 class MainController extends BaseController
 {
-    public function showIndex ()
-    {
-        return Redirect::to('home');
-    }
-
     public function showHome ()
     {
         $pageName = 'HOME';
@@ -40,21 +35,30 @@ class MainController extends BaseController
 
     public function contactForm ()
     {
-        $data = Input::all();
-        $rules = [
-            'name' => 'required',
-            'message' => 'required'
-        ];
-
-        $validator = Validator::make($data, $rules);
-
-        if ($validator->passes())
+        if (Request::isMethod('post'))
         {
-            return Redirect::to('thank-you')->with('name', $data['name']);
+             Input::flash();
+
+             $data = Input::all();
+             $rules = [
+                 'name' => 'required',
+                 'message' => 'required'
+             ];
+
+             $validator = Validator::make($data, $rules);
+
+             if ($validator->passes())
+             {
+                 return Redirect::to('thank-you')->with('name', $data['name']);
+             }
+             else
+             {
+                 return Redirect::to('contact-us')->withErrors($validator)->withInput();;
+             }
         }
         else
         {
-            return Redirect::to('contact-us')->withErrors($validator);
+            throw new Exception('HTTP method should be POST');
         }
     }
 

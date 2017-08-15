@@ -7,7 +7,7 @@
     </div>
     <ul>
     @foreach ($articles as $key=>$article)
-        <li><a href="/laravel/task1/public/index.php/article/{{$key}}">{{ $article['title'] }}</a></li>
+        <li><a href="{{URL::to('/article')}}/{{$key}}">{{ $article['title'] }}</a></li>
     @endforeach
     </ul>
 @stop

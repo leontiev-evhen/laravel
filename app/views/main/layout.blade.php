@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://courses.site/laravel/task1/public/bootstrap/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -21,16 +21,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/laravel/task1/public/index.php">Home</a>
+                            <a class="nav-link" href="{{URL::to('/')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/laravel/task1/public/index.php/articles">Articles</a>
+                            <a class="nav-link" href="{{URL::to('/articles')}}">Articles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/laravel/task1/public/index.php/about">About</a>
+                            <a class="nav-link" href="{{URL::to('/about')}}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/laravel/task1/public/index.php/contact-us">Contact-us</a>
+                            <a class="nav-link" href="{{URL::to('/contact-us')}}">Contact-us</a>
                         </li>
                     </ul>
                 </div>
